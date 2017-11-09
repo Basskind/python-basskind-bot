@@ -22,7 +22,7 @@ def on_ready():
     print("Bot is logged in successfully. Running on servers:\n")
     for s in client.servers:
         print("  - %s (%s)" % (s.name, s.id))
-    yield from client.change_presence(game=Game(name="This is just for tutorial purposes!"))
+    yield from client.change_presence(game=Game(name="Test Test Test"))
 
 
 @client.event
