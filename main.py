@@ -1,9 +1,6 @@
 import discord
 import asyncio
-from discord.ext.commands import Bot
-from discord.ext import commands
-
-PREFIX = "?"
+from discord import Game, Server, Member, Embed
 
 @client.event
 async def on_ready():
