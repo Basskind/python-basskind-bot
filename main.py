@@ -1,14 +1,18 @@
 import discord
-import asyncio
+import asyncio as asyncio
 from discord.ext.commands import Bot
 from discord.ext import commands
+from discord import Game, Server, Member, Embed
 
 client = Bot(description="Basic Bot by Habchy#1665", command_prefix="!", pm_help = True)
 
 @client.event
-async def on_ready():
-	print('Logged in as '+client.user.name+' (ID:'+client.user.id+') | Connected to '+str(len(client.servers))+' servers | Connected to '+str(len(set(client.get_all_members())))+' users')
-    yield from client.change_presence(game=Game(name="This is just for tutorial purposes!"))
+@asyncio.coroutine
+def on_ready():
+    print("Bot is logged in successfully. Running on servers:\n")
+    for s in client.servers:
+        print("  - %s (%s)" % (s.name, s.id))
+    yield from client.change_presence(game=Game(name="dasdasdasdasdasdsad"))
 
 @client.command()
 async def ping(*args):
