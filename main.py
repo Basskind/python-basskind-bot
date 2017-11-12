@@ -9,9 +9,7 @@ client = Bot(description="Basic Bot by Habchy#1665", command_prefix="!", pm_help
 @client.event
 @asyncio.coroutine
 def on_ready():
-    print("Bot is logged in successfully. Running on servers:\n")
-    for s in client.servers:
-        print("  - %s (%s)" % (s.name, s.id))
+    print("Bot is logged in successfully.")
     yield from client.change_presence(game=Game(name="dasdasdasdasdasdsad"))
 
 @client.command()
